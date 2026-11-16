@@ -1,0 +1,90 @@
+CÓMO PUBLICAR EL EMBUDO DE VITAE EN GITHUB
+===========================================
+
+YA ESTÁ LISTO (no hay que tocar nada):
+  publicar/
+    index.html        el embudo "Historia clínica capilar" con todo conectado
+    media/
+      gancho.jpg      fondo del gancho (mujer frente al espejo)
+      llamada.jpg     foto de la videollamada entrante (Valeria saludando)
+      llamada.mp4     video de la videollamada
+      ficha.jpg       fondo de la historia clínica y del diagnóstico
+      perfil.jpg      foto de Valeria en la notificación
+      estilista.jpg   foto de Valeria en el chat
+      compartir.jpg   imagen al compartir el enlace
+
+  El botón final abre WhatsApp 573217728943 con las respuestas de la clienta.
+
+  El proyecto editable quedó en:  Embudo\vitae.cinematica.json
+  (en Cinemática Studio: "Abrir proyecto" y eliges ese archivo)
+
+
+PASO 1 · Crear el repositorio (una sola vez)
+--------------------------------------------
+1. Entra a github.com e inicia sesión (o crea tu cuenta).
+2. Arriba a la derecha: "+"  >  "New repository".
+3. Repository name: vitae-embudo
+   Marca "Public". No marques nada más.
+   Pulsa "Create repository".
+
+
+PASO 2 · Subir esta carpeta con git
+-----------------------------------
+1. Abre esta carpeta "publicar" en el Explorador de archivos.
+2. Clic en la barra de dirección, escribe  powershell  y Enter.
+3. Solo la primera vez que usas git en este computador:
+
+     git config --global user.name "Tu Nombre"
+     git config --global user.email "tu-correo@ejemplo.com"
+
+4. Pega estos comandos uno por uno (Enter después de cada uno).
+   Cambia TU-USUARIO por tu usuario de GitHub:
+
+     git init
+     git add .
+     git commit -m "Embudo Vitae"
+     git branch -M main
+     git remote add origin https://github.com/TU-USUARIO/vitae-embudo.git
+     git push -u origin main
+
+5. Se abre una ventana para iniciar sesión en GitHub: "Sign in with
+   your browser", autorizas y vuelves. La subida tarda un poco por el video.
+
+
+PASO 3 · Encender la página
+---------------------------
+1. En el repositorio: Settings  >  Pages (menú izquierdo).
+2. Source: "Deploy from a branch".  Branch: main  /  (root).  Save.
+3. Espera 1 a 3 minutos y recarga. Arriba dirá:
+     Your site is live at https://TU-USUARIO.github.io/vitae-embudo/
+
+
+PASO 4 · Probar en tu celular
+-----------------------------
+Abre esa dirección en el celular y recorre todo: espejo, llamada con
+video, historia clínica, sello, notificación, chat y botón de WhatsApp.
+
+
+DESPUÉS · Si cambias algo
+-------------------------
+1. Cinemática Studio > Abrir proyecto > vitae.cinematica.json
+2. Edita, Exportar embudo, renombra a index.html y reemplaza el de aquí.
+3. En PowerShell dentro de "publicar":
+     git add .
+     git commit -m "Actualizo embudo"
+     git push
+
+
+PENDIENTE PEQUEÑO · La imagen al compartir
+------------------------------------------
+Para que WhatsApp y Facebook muestren compartir.jpg al pegar el enlace,
+la página necesita su dirección completa. Cuando sepas tu dirección:
+Estilo y ajustes > "Dirección donde se publicará" > pega
+https://TU-USUARIO.github.io/vitae-embudo/  , exporta de nuevo y sube.
+
+
+RECOMENDACIÓN · El video
+------------------------
+llamada.mp4 pesa 35,7 MB. Con datos móviles puede tardar en arrancar.
+Ideal: 8-12 MB con HandBrake (gratis), ajuste "Fast 720p30".
+Reemplaza media\llamada.mp4 con el mismo nombre y haz el git push.
